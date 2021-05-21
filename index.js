@@ -23,25 +23,6 @@ app.post('/register', (req, res) => {
 
     emails.push(email);
 
-    const message_to_user = {
-        to: `${email}`,
-        from: 'curso@ipkonect.com.br',
-        subject: 'Cadastro IP Konect',
-        html: `<p>Olá,  <strong>${name}</strong></p><p> Seu cadastro foi realizado com sucesso.
-        Entre no grupo vip para receber informações sobre automação.
-        </p>
-        <a href="https://chat.whatsapp.com/JQksiz2A1QN9L1oiJRkOTW" target="_blank">Se junte ao grupo</a>`,
-    }
-
-    sgMail
-        .send(message_to_user)
-        .then(() => {
-            console.log('Email sent');
-        })
-        .catch((error) => {
-            console.error(error)
-        });
-
     const message_to_curse = {
         to: 'curso@ipkonect.com.br',
         from: 'curso@ipkonect.com.br',
